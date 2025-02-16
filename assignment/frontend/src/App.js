@@ -7,12 +7,12 @@ function App() {
 
   const handleSubmit = async (action) => {
     try {
-      const response = await fetch(`http://localhost:8000/${action}`, {
+      const response = await fetch(`http://44.222.225.162:8000/${action}`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ username, password }),
+        body: JSON.stringify({ username, password })
       });
 
       const data = await response.json();

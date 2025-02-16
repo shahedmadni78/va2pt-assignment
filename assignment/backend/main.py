@@ -24,6 +24,7 @@ async def create_user(user: User):
     conn = get_db_connection()
     cur = conn.cursor()
     try:
+        print(f"Creating user: {user.username}, {user.password}")
         cur.execute("INSERT INTO users (username, password) VALUES (%s, %s)", (user.username, user.password))
         conn.commit()
         return {"message": "User created successfully!"}
